@@ -1,0 +1,73 @@
+[2024-08-12 19:45:12] [ INFO ] [DaoH2Odontologo:39] Odontologo:  Odontologo{id=2, numeroMatricula=213213, nombre='Juan', apellido='Perez'}
+[2024-08-12 19:58:04] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:08:46] [ INFO ] [DaoH2Odontologo:88] Odontologo{id=1, numeroMatricula=123, nombre='JUAN', apellido='PEREZ'}
+[2024-08-12 20:09:16] [ INFO ] [DaoH2Odontologo:41] Odontologo:  Odontologo{id=2, numeroMatricula=213213, nombre='Juan', apellido='Perez'}
+[2024-08-12 20:09:16] [ INFO ] [DaoH2Odontologo:88] Odontologo{id=1, numeroMatricula=123, nombre='JUAN', apellido='PEREZ'}
+[2024-08-12 20:09:16] [ INFO ] [DaoH2Odontologo:88] Odontologo{id=2, numeroMatricula=213213, nombre='Juan', apellido='Perez'}
+[2024-08-12 20:10:06] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:10:17] [ INFO ] [DaoH2Odontologo:41] Odontologo:  Odontologo{id=2, numeroMatricula=213213, nombre='Juan', apellido='Perez'}
+[2024-08-12 20:10:18] [ INFO ] [DaoH2Odontologo:88] Odontologo{id=1, numeroMatricula=213324, nombre='Sara', apellido='Lopez'}
+[2024-08-12 20:10:18] [ INFO ] [DaoH2Odontologo:88] Odontologo{id=2, numeroMatricula=213213, nombre='Juan', apellido='Perez'}
+[2024-08-12 20:10:43] [ INFO ] [DaoH2Odontologo:41] Odontologo:  Odontologo{id=2, numeroMatricula=964564, nombre='Juan', apellido='Perez'}
+[2024-08-12 20:10:43] [ INFO ] [DaoH2Odontologo:88] Odontologo{id=1, numeroMatricula=213324, nombre='Sara', apellido='Lopez'}
+[2024-08-12 20:10:43] [ INFO ] [DaoH2Odontologo:88] Odontologo{id=2, numeroMatricula=964564, nombre='Juan', apellido='Perez'}
+[2024-08-12 20:17:17] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:22:11] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:22:11] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=2, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:22:11] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:22:11] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=2, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:22:11] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:22:11] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=2, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:22:55] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:22:55] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=2, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:22:55] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:22:55] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=2, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:22:55] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:22:55] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=2, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:23:39] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:23:39] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:23:39] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=2, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:23:39] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:23:39] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=2, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:23:39] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:23:39] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=2, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:24:15] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:24:15] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:24:15] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=123456, nombre='Juan', apellido='Pérez'}
+[2024-08-12 20:24:32] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:24:32] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:24:32] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:24:49] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:24:49] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:24:49] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:24:49] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:26:19] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=213213, nombre='Clara', apellido='Orozco'}
+[2024-08-12 20:26:19] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:26:19] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:26:19] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:27:48] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:27:48] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:27:48] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:27:48] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:27:48] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:27:48] [ INFO ] [DaoEnMemoria:26] odontologo Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:28:34] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:28:34] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:28:34] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:28:34] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:28:34] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:28:34] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:30:44] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:30:44] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:30:44] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:30:44] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:30:44] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:30:44] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:31:47] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:31:47] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:31:47] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:31:47] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:32:08] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:32:08] [ INFO ] [DaoEnMemoria:19] odontologo guardado en memoria Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
+[2024-08-12 20:32:08] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=1, numeroMatricula=123456, nombre='Martha', apellido='Osorio'}
+[2024-08-12 20:32:08] [ INFO ] [DaoEnMemoria:26] odontologo listado en memoria: Odontologo{id=2, numeroMatricula=123456, nombre='Lucas', apellido='Gil'}
