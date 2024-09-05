@@ -58,6 +58,9 @@ public class PacienteService implements IPacienteService {
     public List<Paciente> buscarPorUnaParteApellido(String parte){
         return pacienteRepository.buscarPorParteApellido(parte);
     }
-
+    @Override
+    public List<Paciente> buscarPorProvincia(String pacienteProvincia){
+        return pacienteRepository.buscarPorProvinciaPaciente(pacienteProvincia);
+    }
 
 }

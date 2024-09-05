@@ -17,4 +17,6 @@ public interface ITurnoService {
 
     void eliminarTurno(Integer id);
     Optional<TurnoResponseDto> buscarTurnosPorPaciente(String pacienteApellido);
+
+    Optional<TurnoResponseDto> buscarTurnosPorOdontologo(String odontologoApellido);
 }

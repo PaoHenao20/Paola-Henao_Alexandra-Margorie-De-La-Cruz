@@ -72,4 +72,9 @@ public class PacienteController {
         return ResponseEntity.ok(pacienteService.buscarPorUnaParteApellido(parte));
     }
 
+    @GetMapping("/buscarProvincia/{pacienteProvincia}")
+    public ResponseEntity<List<Paciente>> buscarProvincia(@PathVariable String pacienteProvincia){
+        return ResponseEntity.ok(pacienteService.buscarPorProvincia(pacienteProvincia));
+    }
+
 }

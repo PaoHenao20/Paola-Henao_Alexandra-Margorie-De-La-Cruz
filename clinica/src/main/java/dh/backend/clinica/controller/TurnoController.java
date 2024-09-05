@@ -40,6 +40,12 @@ public class TurnoController {
         return ResponseEntity.ok(turno.get());
     }
 
+    @GetMapping("/buscarTurnoOdontologoApellido/{apellido}")
+    public ResponseEntity<TurnoResponseDto> buscarTurnoPorOdontologoApellido(@PathVariable String apellido){
+        Optional<TurnoResponseDto> turno = turnoService.buscarTurnosPorOdontologo(apellido);
+        return ResponseEntity.ok(turno.get());
+    }
+
     @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<String> eliminarTurno(@PathVariable Integer id){
         turnoService.eliminarTurno(id);

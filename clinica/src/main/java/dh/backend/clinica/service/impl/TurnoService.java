@@ -123,6 +123,16 @@ public class TurnoService implements ITurnoService {
         return Optional.ofNullable(turnoParaResponder);
     }
 
+    @Override
+    public Optional<TurnoResponseDto> buscarTurnosPorOdontologo(String odontologoApellido) {
+        Optional<Turno> turno = turnoRepository.buscarPorApellidoOdontologo(odontologoApellido);
+        TurnoResponseDto turnoParaResponder = null;
+        if(turno.isPresent()) {
+            turnoParaResponder = convertirTurnoEnResponse(turno.get());
+        }
+        return Optional.ofNullable(turnoParaResponder);
+    }
+
     private TurnoResponseDto obtenerTurnoResponse(Turno turnoDesdeBD){
         OdontologoResponseDto odontologoResponseDto = new OdontologoResponseDto(
                 turnoDesdeBD.getOdontologo().getId(), turnoDesdeBD.getOdontologo().getNroMatricula(),
