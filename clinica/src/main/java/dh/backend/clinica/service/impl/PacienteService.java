@@ -1,12 +1,18 @@
 package dh.backend.clinica.service.impl;
 
 
+import dh.backend.clinica.dto.request.TurnoRequestDto;
+import dh.backend.clinica.dto.response.TurnoResponseDto;
+import dh.backend.clinica.entity.Odontologo;
 import dh.backend.clinica.entity.Paciente;
+import dh.backend.clinica.entity.Turno;
+import dh.backend.clinica.exception.BadRequestException;
 import dh.backend.clinica.exception.ResourceNotFoundException;
 import dh.backend.clinica.repository.IPacienteRepository;
 import dh.backend.clinica.service.IPacienteService;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +27,26 @@ public class PacienteService implements IPacienteService {
 
     @Override
     public Paciente guardarPaciente(Paciente paciente) {
+        if (paciente == null) {
+            throw new BadRequestException("No se puede guardar un objeto nulo.");
+        }
+
+        if (paciente.getNombre() == null || paciente.getNombre().trim().isEmpty()) {
+            throw new BadRequestException("El nombre del paciente es obligatorio.");
+        }
+
+        if (paciente.getApellido() == null || paciente.getApellido().trim().isEmpty()) {
+            throw new BadRequestException("El apellido del paciente es obligatorio.");
+        }
+
+        if (paciente.getDni() == null || paciente.getDni().trim().isEmpty()) {
+            throw new BadRequestException("El DNI del paciente es obligatorio.");
+        }
+
+        if (paciente.getDomicilio() == null) {
+            throw new BadRequestException("El domicilio del paciente es obligatorio.");
+        }
+
         return pacienteRepository.save(paciente);
     }
 

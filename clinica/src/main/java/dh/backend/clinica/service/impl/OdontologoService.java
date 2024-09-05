@@ -1,6 +1,9 @@
 package dh.backend.clinica.service.impl;
 
 import dh.backend.clinica.entity.Odontologo;
+import dh.backend.clinica.entity.Turno;
+import dh.backend.clinica.exception.BadRequestException;
+import dh.backend.clinica.exception.ResourceNotFoundException;
 import dh.backend.clinica.repository.IOdontologoRepository;
 import dh.backend.clinica.service.IOdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +21,27 @@ public class OdontologoService implements IOdontologoService {
     }
     @Override
     public Odontologo guardarOdontologo(Odontologo odontologo) {
+        if (odontologo == null) {
+            throw new BadRequestException("No se puede guardar un objeto nulo.");
+        }
+
+        if (odontologo.getNroMatricula() == null || odontologo.getNroMatricula().trim().isEmpty()) {
+            throw new BadRequestException("El número de matrícula del odontólogo es obligatorio.");
+        }
+
+        if (odontologo.getNombre() == null || odontologo.getNombre().trim().isEmpty()) {
+            throw new BadRequestException("El nombre del odontólogo es obligatorio.");
+        }
+
+        if (odontologo.getApellido() == null || odontologo.getApellido().trim().isEmpty()) {
+            throw new BadRequestException("El apellido del odontólogo es obligatorio.");
+        }
+
+
         return odontologoRepository.save(odontologo);
     }
+
+
 
     @Override
     public Optional<Odontologo> buscarPorId(Integer id) {
@@ -38,7 +60,12 @@ public class OdontologoService implements IOdontologoService {
 
     @Override
     public void eliminarOdontologo(Integer id) {
-        odontologoRepository.deleteById(id);
+        Optional<Odontologo> odontologoEncontrado = odontologoRepository.findById(id);
+        if(odontologoEncontrado.isPresent()){
+            odontologoRepository.deleteById(id);
+        } else {
+            throw new ResourceNotFoundException("Odontologo no encontrado");
+        }
     }
 
     @Override
