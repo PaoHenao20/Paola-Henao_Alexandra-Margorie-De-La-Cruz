@@ -2,6 +2,7 @@ package dh.backend.clinica;
 
 import dh.backend.clinica.dto.request.OdontologoRequestDto;
 import dh.backend.clinica.dto.response.OdontologoResponseDto;
+import dh.backend.clinica.exception.ResourceNotFoundException;
 import dh.backend.clinica.service.impl.OdontologoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -61,6 +62,23 @@ class OdontologoServiceTest {
         odontologos = odontologoService.buscarTodos();
         // entonces
         assertFalse(odontologos.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Testear los detalles de un odontólogo guardado")
+    void caso4(){
+        assertEquals("Vilca", odontologoDesdeDb.getApellido());
+        assertEquals("Julio", odontologoDesdeDb.getNombre());
+        assertEquals("546563", odontologoDesdeDb.getMatricula());
+    }
+
+    @Test
+    @DisplayName("Modificar un odontólogo existente")
+    void caso5() {
+        odontologoDesdeDb.setNombre("Carlos");
+        odontologoService.modificarOdontologo(odontologoDesdeDb);
+        OdontologoResponseDto odontologoModificado = odontologoService.buscarPorId(odontologoDesdeDb.getId()).get();
+        assertEquals("Carlos", odontologoModificado.getNombre());
     }
 
 }

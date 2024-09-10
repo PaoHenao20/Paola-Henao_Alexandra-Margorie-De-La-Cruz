@@ -68,4 +68,31 @@ class PacienteServiceTest {
         assertFalse(pacientes.isEmpty());
     }
 
+    @Test
+    @DisplayName("Eliminar un paciente y confirmar que ya no existe")
+    void caso4() {
+        // Dado un paciente que ha sido guardado en la base de datos
+        Integer id = pacienteDesdeDb.getId();
+
+        // Cuando se elimina el paciente
+        pacienteService.eliminarPaciente(id);
+
+        // Entonces se verifica que el paciente ya no exista en la base de datos
+        assertTrue(pacienteService.buscarPorId(id).isEmpty(), "El paciente aún existe después de ser eliminado");
+    }
+
+    @Test
+    @DisplayName("Modificar los detalles de un paciente")
+    void caso5() {
+        // Dado
+        pacienteDesdeDb.setNombre("Ana");
+        pacienteService.modificarPaciente(pacienteDesdeDb);
+
+        // Cuando se busca el paciente modificado
+        Paciente pacienteModificado = pacienteService.buscarPorId(pacienteDesdeDb.getId()).get();
+
+        // Entonces
+        assertEquals("Ana", pacienteModificado.getNombre());
+    }
+
 }

@@ -5,6 +5,7 @@ import dh.backend.clinica.dto.response.OdontologoResponseDto;
 import dh.backend.clinica.dto.response.TurnoResponseDto;
 import dh.backend.clinica.entity.Domicilio;
 import dh.backend.clinica.entity.Paciente;
+import dh.backend.clinica.exception.ResourceNotFoundException;
 import dh.backend.clinica.service.impl.OdontologoService;
 import dh.backend.clinica.service.impl.PacienteService;
 import dh.backend.clinica.service.impl.TurnoService;
@@ -85,4 +86,20 @@ class TurnoServiceTest {
         assertFalse(turnos.isEmpty());
     }
 
+    @Test
+    @DisplayName("Eliminar un turno")
+    void caso4() {
+        // Dado
+        Integer id = turnoDesdeDb.getId();
+
+        // Cuando se elimina
+        turnoService.eliminarTurno(id);
+
+        // Entonces
+        Exception exception = assertThrows(ResourceNotFoundException.class, () -> {
+            turnoService.buscarPorId(id).get();
+        });
+
+        assertTrue(exception.getMessage().contains("Turno no encontrado"));
+    }
 }
