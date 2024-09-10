@@ -59,9 +59,6 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(apiError);
     }
 
-
-
-
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ApiError> manejoGeneral(Exception e, HttpServletRequest request){
         ApiError apiError = new ApiError(

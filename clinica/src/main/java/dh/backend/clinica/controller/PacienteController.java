@@ -2,7 +2,6 @@ package dh.backend.clinica.controller;
 
 import dh.backend.clinica.entity.Paciente;
 import dh.backend.clinica.service.IPacienteService;
-import dh.backend.clinica.service.impl.PacienteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

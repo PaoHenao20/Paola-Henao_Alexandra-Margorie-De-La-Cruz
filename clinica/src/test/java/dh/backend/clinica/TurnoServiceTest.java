@@ -5,8 +5,6 @@ import dh.backend.clinica.dto.response.OdontologoResponseDto;
 import dh.backend.clinica.dto.response.TurnoResponseDto;
 import dh.backend.clinica.entity.Domicilio;
 import dh.backend.clinica.entity.Paciente;
-import dh.backend.clinica.entity.Turno;
-import dh.backend.clinica.entity.Turno;
 import dh.backend.clinica.service.impl.OdontologoService;
 import dh.backend.clinica.service.impl.PacienteService;
 import dh.backend.clinica.service.impl.TurnoService;

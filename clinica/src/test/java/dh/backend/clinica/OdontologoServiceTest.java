@@ -2,7 +2,6 @@ package dh.backend.clinica;
 
 import dh.backend.clinica.dto.request.OdontologoRequestDto;
 import dh.backend.clinica.dto.response.OdontologoResponseDto;
-import dh.backend.clinica.entity.Odontologo;
 import dh.backend.clinica.service.impl.OdontologoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
