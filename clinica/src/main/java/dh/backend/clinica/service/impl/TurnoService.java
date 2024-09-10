@@ -43,35 +43,38 @@ public class TurnoService implements ITurnoService {
     @Override
     public TurnoResponseDto guardarTurno(TurnoRequestDto turnoRequestDto){
         Optional<Paciente> paciente = pacienteService.buscarPorId(turnoRequestDto.getPaciente_id());
-        Optional<Odontologo> odontologo = odontologoService.buscarPorId(turnoRequestDto.getOdontologo_id());
+        Optional<OdontologoResponseDto> odontologo = odontologoService.buscarPorId(turnoRequestDto.getOdontologo_id());
         Turno turno = new Turno();
         Turno turnoDesdeBD = null;
         TurnoResponseDto turnoResponseDto = null;
         if(paciente.isPresent() && odontologo.isPresent()){
-            // el armado del turno desde el turno request dto
+
             turno.setPaciente(paciente.get());
-            turno.setOdontologo(odontologo.get());
+            turno.setOdontologo(modelMapper.map(odontologo, Odontologo.class));
             turno.setFecha(LocalDate.parse(turnoRequestDto.getFecha()));
 
-            // aca obtengo el turno persistido con el id
+
             turnoDesdeBD = turnoRepository.save(turno);
 
-            // armado del turno response dto desde el turno obtenido de la base de datos
-            // armado a mano
-            // turnoResponseDto = obtenerTurnoResponse(turnoDesdeBD);
-            // armado con modelmapper
+
             turnoResponseDto = convertirTurnoEnResponse(turnoDesdeBD);
+            return turnoResponseDto;
         }else{
             throw new BadRequestException("Turno no se puede guardar. Paciente o odontologo no encontrado");
         }
-        return turnoResponseDto;
+
     }
 
     @Override
     public Optional<TurnoResponseDto> buscarPorId(Integer id) {
         Optional<Turno> turno = turnoRepository.findById(id);
-        TurnoResponseDto turnoRespuesta = convertirTurnoEnResponse(turno.get());
-        return Optional.of(turnoRespuesta);
+        if(turno.isPresent()) {
+            TurnoResponseDto turnoRespuesta = convertirTurnoEnResponse(turno.get());
+            return Optional.of(turnoRespuesta);
+        }else {
+            throw new ResourceNotFoundException("Turno no encontrado");
+        }
+
     }
 
     @Override
@@ -79,10 +82,6 @@ public class TurnoService implements ITurnoService {
         List<Turno> turnosDesdeBD = turnoRepository.findAll();
         List<TurnoResponseDto> turnosRespuesta = new ArrayList<>();
         for(Turno t: turnosDesdeBD){
-            // manera manual
-            //turnosRespuesta.add(obtenerTurnoResponse(t));
-            // model mapper
-//            logger.info("turno "+ t);
             turnosRespuesta.add(convertirTurnoEnResponse(t));
         }
         return turnosRespuesta;
@@ -91,13 +90,15 @@ public class TurnoService implements ITurnoService {
     @Override
     public void modificarTurnos(TurnoModifyDto turnoModifyDto) {
         Optional<Paciente> paciente = pacienteService.buscarPorId(turnoModifyDto.getPaciente_id());
-        Optional<Odontologo> odontologo = odontologoService.buscarPorId(turnoModifyDto.getOdontologo_id());
+        Optional<OdontologoResponseDto> odontologo = odontologoService.buscarPorId(turnoModifyDto.getOdontologo_id());
         if(paciente.isPresent() && odontologo.isPresent()){
             Turno turno = new Turno(
                     turnoModifyDto.getId(),
-                    paciente.get(), odontologo.get(), LocalDate.parse(turnoModifyDto.getFecha())
-                    );
+                    paciente.get(), modelMapper.map(odontologo,Odontologo.class), LocalDate.parse(turnoModifyDto.getFecha())
+            );
             turnoRepository.save(turno);
+        }else{
+            throw new BadRequestException("Turno no se puede modificar. Paciente o odontologo no encontrado");
         }
     }
 
@@ -119,6 +120,8 @@ public class TurnoService implements ITurnoService {
         TurnoResponseDto turnoParaResponder = null;
          if(turno.isPresent()) {
              turnoParaResponder = convertirTurnoEnResponse(turno.get());
+         }else {
+             throw new ResourceNotFoundException("Turno no encontrado");
          }
         return Optional.ofNullable(turnoParaResponder);
     }
@@ -129,26 +132,12 @@ public class TurnoService implements ITurnoService {
         TurnoResponseDto turnoParaResponder = null;
         if(turno.isPresent()) {
             turnoParaResponder = convertirTurnoEnResponse(turno.get());
+        }else {
+            throw new ResourceNotFoundException("Turno no encontrado");
         }
         return Optional.ofNullable(turnoParaResponder);
     }
 
-    private TurnoResponseDto obtenerTurnoResponse(Turno turnoDesdeBD){
-        OdontologoResponseDto odontologoResponseDto = new OdontologoResponseDto(
-                turnoDesdeBD.getOdontologo().getId(), turnoDesdeBD.getOdontologo().getNroMatricula(),
-                turnoDesdeBD.getOdontologo().getApellido(), turnoDesdeBD.getOdontologo().getNombre()
-        );
-        PacienteResponseDto pacienteResponseDto = new PacienteResponseDto(
-                turnoDesdeBD.getPaciente().getId(), turnoDesdeBD.getPaciente().getApellido(),
-                turnoDesdeBD.getPaciente().getNombre(), turnoDesdeBD.getPaciente().getDni()
-        );
-        TurnoResponseDto turnoResponseDto = new TurnoResponseDto(
-                turnoDesdeBD.getId(),
-                pacienteResponseDto, odontologoResponseDto,
-                turnoDesdeBD.getFecha().toString()
-        );
-        return turnoResponseDto;
-    }
 
     private TurnoResponseDto convertirTurnoEnResponse(Turno turno){
         TurnoResponseDto turnoResponseDto = modelMapper.map(turno, TurnoResponseDto.class);

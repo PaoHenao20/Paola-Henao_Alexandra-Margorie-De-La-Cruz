@@ -6,11 +6,11 @@ form.addEventListener("submit", function (event) {
 
   const apellido = document.getElementById("apellido").value;
   const nombre = document.getElementById("nombre").value;
-  const nroMatricula = document.getElementById("matricula").value;
+  const matricula = document.getElementById("matricula").value;
 
   // llamando al endpoint de agregar
   const datosFormulario = {
-    nroMatricula,
+    matricula,
     nombre,
     apellido
   };
