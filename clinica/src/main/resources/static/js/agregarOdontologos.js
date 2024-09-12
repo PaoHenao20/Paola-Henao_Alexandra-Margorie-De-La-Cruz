@@ -27,7 +27,7 @@ form.addEventListener("submit", async function (event) {
 
        if (
             formatedResponse.statusCode === 400 ||
-            formatedResponse.statusCode === 500
+            formatedResponse.statusCode === 404
           ) {
             alert("Algo salió mal");
           } else {

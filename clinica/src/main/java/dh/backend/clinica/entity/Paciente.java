@@ -1,8 +1,6 @@
 package dh.backend.clinica.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import dh.backend.clinica.utils.GsonProvider;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,8 +33,4 @@ public class Paciente {
     //@JsonIgnore
     private Set<Turno> turnoSet;
 
-//    @Override
-//    public String toString() {
-//       // return GsonProvider.getGson().toJson(this);
-//    }
 }
