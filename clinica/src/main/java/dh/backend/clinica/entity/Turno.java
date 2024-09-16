@@ -1,7 +1,6 @@
 package dh.backend.clinica.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import dh.backend.clinica.utils.GsonProvider;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,11 +28,6 @@ public class Turno {
     @JsonBackReference(value = "odontologo-turno")
     private Odontologo odontologo;
     private LocalDate fecha;
-
-//    @Override
-//    public String toString() {
-//        return GsonProvider.getGson().toJson(this);
-//    }
 
     @Override
     public String toString() {

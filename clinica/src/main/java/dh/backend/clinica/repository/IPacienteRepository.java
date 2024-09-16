@@ -13,4 +13,7 @@ public interface IPacienteRepository extends JpaRepository<Paciente, Integer> {
 
     @Query("Select p from Paciente p where LOWER(p.apellido) LIKE LOWER(CONCAT('%',:parteApellido,'%'))")
     List<Paciente> buscarPorParteApellido(String parteApellido);
+
+    @Query("Select p from Paciente p join p.domicilio d with d.provincia = :pacienteProvincia ")
+    List<Paciente> buscarPorProvinciaPaciente(String pacienteProvincia);
 }

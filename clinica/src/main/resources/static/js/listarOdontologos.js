@@ -22,12 +22,12 @@ function fetchOdontologos() {
 
         row.innerHTML = `
               <td>${odontologo.id}</td>
-              <td>${odontologo.nroMatricula}</td>
+              <td>${odontologo.matricula}</td>
               <td>${odontologo.apellido}</td>
               <td>${odontologo.nombre}</td>
 
               <td>
-                <button class="btn btn-primary btn-sm" onclick="editOdontologo(${odontologo.id}, '${odontologo.nroMatricula}',
+                <button class="btn btn-primary btn-sm" onclick="editOdontologo(${odontologo.id}, '${odontologo.matricula}',
                  '${odontologo.apellido}', '${odontologo.nombre}')">Modificar</button>
                 <button class="btn btn-danger btn-sm" onclick="deleteOdontologo(${odontologo.id})">Eliminar</button>
               </td>
@@ -44,12 +44,12 @@ function fetchOdontologos() {
 // Función para abrir el modal y cargar los datos del odontologo
 editOdontologo = function (
   id,
-  nroMatricula,
+  matricula,
   apellido,
   nombre
 ) {
   currentOdontologoId = id;
-  document.getElementById("editMatricula").value = nroMatricula;
+  document.getElementById("editMatricula").value = matricula;
   document.getElementById("editNombre").value = nombre;
   document.getElementById("editApellido").value = apellido;
   editModal.show();
@@ -58,7 +58,7 @@ editOdontologo = function (
 // Función para editar un odontologo
 editForm.addEventListener("submit", function (event) {
   event.preventDefault();
-  const nroMatricula = document.getElementById("editMatricula").value;
+  const matricula = document.getElementById("editMatricula").value;
   const nombre = document.getElementById("editNombre").value;
   const apellido = document.getElementById("editApellido").value;
 
@@ -71,7 +71,7 @@ editForm.addEventListener("submit", function (event) {
     },
     body: JSON.stringify({
       id: currentOdontologoId,
-      nroMatricula,
+      matricula,
       apellido,
       nombre,
     }),

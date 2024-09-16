@@ -2,7 +2,6 @@ package dh.backend.clinica.controller;
 
 import dh.backend.clinica.entity.Paciente;
 import dh.backend.clinica.service.IPacienteService;
-import dh.backend.clinica.service.impl.PacienteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -70,6 +69,11 @@ public class PacienteController {
     @GetMapping("/buscarApellido/{parte}")
     public ResponseEntity<List<Paciente>> buscarParteApellido(@PathVariable String parte){
         return ResponseEntity.ok(pacienteService.buscarPorUnaParteApellido(parte));
+    }
+
+    @GetMapping("/buscarProvincia/{pacienteProvincia}")
+    public ResponseEntity<List<Paciente>> buscarProvincia(@PathVariable String pacienteProvincia){
+        return ResponseEntity.ok(pacienteService.buscarPorProvincia(pacienteProvincia));
     }
 
 }

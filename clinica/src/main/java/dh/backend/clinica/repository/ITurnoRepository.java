@@ -13,4 +13,6 @@ public interface ITurnoRepository extends JpaRepository<Turno, Integer> {
     //from Product p inner join p.category with p.price > 500
     @Query("Select t from Turno t join t.paciente p with p.apellido = :pacienteApellido ")
     Optional<Turno> buscarPorApellidoPaciente(String pacienteApellido);
+    @Query("Select t from Turno t join t.odontologo o with o.apellido = :odontologoApellido ")
+    Optional<Turno> buscarPorApellidoOdontologo(String odontologoApellido);
 }
